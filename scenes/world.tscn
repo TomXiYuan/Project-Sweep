@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b531jldmumpbl"]
+
+[ext_resource type="Texture2D" uid="uid://d1s82d18en6qv" path="res://assets/Background-Tile.png" id="1_rwgxs"]
+[ext_resource type="Script" uid="uid://cl74rlh5b65nb" path="res://scripts/camera_2d.gd" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dv3w6tt1sgn52" path="res://scenes/player.tscn" id="3_4wyf3"]
+
+[node name="World" type="Node2D" unique_id=1751555392]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=816313778]
+offset_left = -1024.0
+offset_top = -512.0
+offset_right = 1024.0
+offset_bottom = 512.0
+texture = ExtResource("1_rwgxs")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=637080885]
+script = ExtResource("2_4wyf3")
+
+[node name="player" parent="." unique_id=1453029098 instance=ExtResource("3_4wyf3")]

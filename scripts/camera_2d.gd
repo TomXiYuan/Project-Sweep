@@ -24,6 +24,9 @@ func _input(event: InputEvent) -> void:
 		isDragging = event.pressed
 	if event is InputEventMouseMotion and isDragging:
 		targetPos -= event.relative / zoom
+	
+	if event is InputEventPanGesture:
+		targetPos += event.delta * (dragSpeed * 2.0) / zoom
 		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
