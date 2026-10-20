@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dv3w6tt1sgn52"]
 
-[ext_resource type="Texture2D" uid="uid://b45fa8uf05bs0" path="res://assets/bodySprite.png" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://b45fa8uf05bs0" path="res://assets/CircleSprite.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bnbw0g4bxnhtm" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://b6m5lcrvbhj3o" path="res://scenes/sphere_tracer.tscn" id="3_qhqgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ngg0u"]
-radius = 25.019993
+radius = 26.0
 
-[node name="player" type="CharacterBody2D" unique_id=1453029098]
+[node name="Player" type="CharacterBody2D" unique_id=1453029098]
 slide_on_ceiling = false
 script = ExtResource("1_g2els")
 speed = 400.0
-friction = 1000.0
+friction = 750.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280219590]
 scale = Vector2(0.2, 0.2)
@@ -18,3 +19,5 @@ texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=149825980]
 shape = SubResource("CircleShape2D_ngg0u")
+
+[node name="SphereTracer" parent="." unique_id=1153834495 instance=ExtResource("3_qhqgy")]

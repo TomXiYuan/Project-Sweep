@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
  
 	move_and_slide()
  
- 
 func _get_input_direction() -> Vector2:
 	var dir := Vector2.ZERO
 	if Input.is_physical_key_pressed(KEY_W):

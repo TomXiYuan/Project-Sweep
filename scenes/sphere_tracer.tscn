@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6m5lcrvbhj3o"]
+
+[ext_resource type="Script" uid="uid://8h1xap2dmeru" path="res://scripts/sphere_tracer.gd" id="1_1vi0y"]
+
+[node name="SphereTracer" type="Node2D" unique_id=1153834495]
+script = ExtResource("1_1vi0y")

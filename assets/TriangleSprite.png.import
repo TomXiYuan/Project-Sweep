@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1s82d18en6qv"
-path="res://.godot/imported/Background-Tile.png-25fc444f1c763330e9cb9ade464c9ede.ctex"
+uid="uid://bnc40qvfd4bup"
+path="res://.godot/imported/TriangleSprite.png-eb2b594aa2d3b162def498ce460c6ef9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background-Tile.png"
-dest_files=["res://.godot/imported/Background-Tile.png-25fc444f1c763330e9cb9ade464c9ede.ctex"]
+source_file="res://assets/TriangleSprite.png"
+dest_files=["res://.godot/imported/TriangleSprite.png-eb2b594aa2d3b162def498ce460c6ef9.ctex"]
 
 [params]
 
