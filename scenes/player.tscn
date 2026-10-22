@@ -9,8 +9,6 @@ radius = 25.019993
 [node name="player" type="CharacterBody2D" unique_id=1453029098]
 slide_on_ceiling = false
 script = ExtResource("1_g2els")
-speed = 400.0
-friction = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280219590]
 scale = Vector2(0.2, 0.2)

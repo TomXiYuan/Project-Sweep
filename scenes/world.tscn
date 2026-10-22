@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://d1s82d18en6qv" path="res://assets/Background-Tile.png" id="1_rwgxs"]
 [ext_resource type="Script" uid="uid://cl74rlh5b65nb" path="res://scripts/camera_2d.gd" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dv3w6tt1sgn52" path="res://scenes/player.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cgxhnxckksyyp" path="res://scenes/scanner.tscn" id="4_k0juu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngg0u"]
+size = Vector2(245, 69)
 
 [node name="World" type="Node2D" unique_id=1751555392]
 
@@ -18,3 +22,14 @@ stretch_mode = 1
 script = ExtResource("2_4wyf3")
 
 [node name="player" parent="." unique_id=1453029098 instance=ExtResource("3_4wyf3")]
+
+[node name="Scanner" parent="player" unique_id=772379166 instance=ExtResource("4_k0juu")]
+
+[node name="RayCast2D" type="RayCast2D" parent="player/Scanner" unique_id=326909011]
+
+[node name="StaticBody2D" type="RigidBody2D" parent="." unique_id=1720810209]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=64093083]
+position = Vector2(215, -132)
+shape = SubResource("RectangleShape2D_ngg0u")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgxhnxckksyyp"]
+
+[ext_resource type="Script" uid="uid://r8vdm7vjbc5t" path="res://scripts/scanner.gd" id="1_2ars4"]
+
+[node name="Scanner" type="Node2D" unique_id=772379166]
+script = ExtResource("1_2ars4")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1595059370]
