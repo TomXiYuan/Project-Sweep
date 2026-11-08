@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b7kx0dicbewkv"]
+
+[ext_resource type="Script" uid="uid://bhfh206ihacnw" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="PackedScene" uid="uid://2rew0eklypl4" path="res://entities/pulser/pulser.tscn" id="2_sglur"]
+[ext_resource type="Shader" uid="uid://cwfue306uw8pr" path="res://systems/pulse/pulse_visual.gdshader" id="3_sglur"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ngg0u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bls4j"]
+render_priority = 0
+shader = ExtResource("3_sglur")
+shader_parameter/pulse_brightness = 2.0
+shader_parameter/edge_brightness = 1.0
+shader_parameter/edge_duration = 3.0
+shader_parameter/edge_thickness = 1.0
+shader_parameter/depth_threshold = 4.99999988824
+shader_parameter/normal_threshold = 0.4
+shader_parameter/depth_normal_threshold = 0.499999988824
+shader_parameter/depth_normal_threshold_scale = 7.0
+shader_parameter/outline_sky = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ngg0u"]
+material = SubResource("ShaderMaterial_bls4j")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Player" type="CharacterBody3D" unique_id=304805227]
+script = ExtResource("1_symyc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1487959318]
+shape = SubResource("CapsuleShape3D_ngg0u")
+
+[node name="Head" type="Node3D" parent="." unique_id=153601195]
+
+[node name="Pulser" parent="Head" unique_id=1687778978 instance=ExtResource("2_sglur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.1, -0.25)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=48289036]
+
+[node name="PulseOverlay" type="MeshInstance3D" parent="Head/Camera3D" unique_id=169784493]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ngg0u")

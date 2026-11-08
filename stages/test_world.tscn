@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b115upegiau0g"]
+
+[sub_resource type="Environment" id="Environment_ngg0u"]
+background_mode = 1
+
+[node name="TestWorld" type="Node3D" unique_id=1131242211]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1297637866]
+environment = SubResource("Environment_ngg0u")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=763059744]
+use_collision = true
+size = Vector3(40, 0.2, 40)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=1376257392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22661638, 2.5942318, 3.9060826)
+use_collision = true
+size = Vector3(10.990601, 5.019965, 1.2002563)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2020633386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9176514, -5.8333507)
+
+[node name="Sphere" type="CSGSphere3D" parent="." unique_id=515546496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23169148, 1.156702, -0.32575727)
+radius = 0.7422941
+rings = 36
+
+[node name="Torus" type="CSGTorus3D" parent="." unique_id=1637918769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5934749, 1.3474407, -2.9379797)
+ring_sides = 36

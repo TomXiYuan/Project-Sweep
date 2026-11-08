@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2rew0eklypl4"]
+
+[ext_resource type="Script" uid="uid://4ih4bptn56y5" path="res://entities/pulser/pulser.gd" id="1_nwef0"]
+[ext_resource type="Shader" uid="uid://cdiur3was50nq" path="res://systems/viewmodel.gdshader" id="2_nwef0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwef0"]
+render_priority = 2
+shader = ExtResource("2_nwef0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ngg0u"]
+size = Vector3(0.075, 0.1, 0.05)
+
+[node name="Pulser" type="Node3D" unique_id=1687778978]
+script = ExtResource("1_nwef0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2133926732]
+material_override = SubResource("ShaderMaterial_nwef0")
+mesh = SubResource("BoxMesh_ngg0u")

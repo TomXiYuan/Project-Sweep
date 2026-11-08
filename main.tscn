@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://de4d675h0w4gg"]
+
+[ext_resource type="PackedScene" uid="uid://b115upegiau0g" path="res://stages/test_world.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b7kx0dicbewkv" path="res://entities/player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bfdocycmy4wt7" path="res://systems/pulse/pulse_manager.tscn" id="3_h2yge"]
+[ext_resource type="Shader" uid="uid://d2j5j5jvms4mw" path="res://systems/post_processing/psx_effect.gdshader" id="4_1bvp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("4_1bvp3")
+shader_parameter/resolution_x = 640
+shader_parameter/resolution_y = 480
+shader_parameter/color_bit_depth = 4
+shader_parameter/dither_strength = 0.01
+shader_parameter/jitter_amount = 0.008
+shader_parameter/jitter_speed = 1.0
+shader_parameter/jitter_frequency = 180.0
+shader_parameter/chromatic_aberration_strength = 0.0
+shader_parameter/vignette_strength = 0.8
+shader_parameter/vignette_radius = 0.9
+
+[node name="Main" type="Node3D" unique_id=9624408]
+
+[node name="PulseManager" parent="." unique_id=544301216 instance=ExtResource("3_h2yge")]
+
+[node name="TestWorld" parent="." unique_id=1131242211 instance=ExtResource("1_ig7tw")]
+
+[node name="Player" parent="." unique_id=304805227 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PostProcessing" type="CanvasLayer" parent="." unique_id=307014835]
+
+[node name="PSXEffect" type="ColorRect" parent="PostProcessing" unique_id=1585838552]
+material = SubResource("ShaderMaterial_lquwl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
